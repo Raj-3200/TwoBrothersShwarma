@@ -288,7 +288,7 @@ const Reviews = memo(function Reviews() {
         {/* Write a review CTA */}
         <div className="text-center mt-6">
           <a
-            href="https://maps.app.goo.gl/zHJ9f71Q37atqD3i6"
+            href="https://www.google.com/maps/place/Two+Brothers+Shawarma/@21.133933,79.1192787,17z/data=!4m6!3m5!1s0x3bd4c7aa6265d175:0x883e00bf800a67dc!8m2!3d21.133933!4d79.1192787!16s/g/11xcfdwx2s"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-flame/70 hover:text-flame transition-colors duration-200"
