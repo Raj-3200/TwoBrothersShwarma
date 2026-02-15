@@ -37,7 +37,7 @@ const SectionHeading = memo(function SectionHeading({
               : 'bg-flame/10 text-flame border border-flame/15'
           }`}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-current" />
           {badge}
         </motion.span>
       )}

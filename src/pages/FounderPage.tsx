@@ -70,15 +70,13 @@ const FounderPage = memo(function FounderPage() {
               </div>
 
               {/* Floating badge */}
-              <motion.div
+              <div
                 className="absolute -top-4 -right-4 lg:-right-6 rounded-2xl px-5 py-3 border border-flame/20 shadow-glow-flame"
                 style={{ background: 'linear-gradient(135deg, #E8750A, #C2610A)' }}
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <p className="text-white font-heading font-black text-lg">18+</p>
                 <p className="text-white/70 text-[10px] font-bold">YEARS EXP</p>
-              </motion.div>
+              </div>
             </motion.div>
 
             {/* Content */}

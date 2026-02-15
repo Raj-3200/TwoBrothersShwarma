@@ -32,6 +32,8 @@
   img {
     image-rendering: auto;
     -webkit-backface-visibility: hidden;
+    /* Prevent layout shift — reserve space */
+    content-visibility: auto;
   }
 }
 
@@ -122,13 +124,16 @@
   .will-change-transform {
     will-change: transform;
   }
+}
 
-  /* GPU-accelerated transitions */
-  .gpu {
-    transform: translateZ(0);
-    will-change: transform;
-    backface-visibility: hidden;
-  }
+/* Scroll indicator keyframes (CSS-only, no JS needed) */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+@keyframes scrollDot {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(10px); opacity: 0.2; }
 }
 
 /* Custom scrollbar */

@@ -22,10 +22,15 @@
     <meta name="twitter:description" content="Freshly Grilled. Loaded with Flavor." />
     <meta name="twitter:image" content="/og-image.jpg" />
 
-    <!-- Fonts -->
+    <!-- DNS prefetch for external image CDN -->
+    <link rel="dns-prefetch" href="https://images.pexels.com" />
+    <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+
+    <!-- Fonts — preconnect + preload critical font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <title>Two Brothers Shawarma — Nagpur's Favorite Shawarma Destination</title>
   </head>

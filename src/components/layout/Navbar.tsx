@@ -100,7 +100,7 @@ const Navbar = memo(function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden bg-charcoal/98 backdrop-blur-2xl border-t border-flame/10 overflow-hidden"
+            className="lg:hidden bg-charcoal/98 border-t border-flame/10 overflow-hidden"
           >
             <div className="section-padding py-6 flex flex-col gap-2">
               {navLinks.map((link, i) => (

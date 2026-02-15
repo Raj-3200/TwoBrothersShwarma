@@ -11,11 +11,16 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
+    target: 'es2020',
+    cssMinify: true,
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes('node_modules/framer-motion')) return 'motion'
           if (id.includes('node_modules/react-router')) return 'router'
+          if (id.includes('node_modules/react-dom')) return 'react-dom'
+          if (id.includes('node_modules/react')) return 'react-core'
         },
       },
     },

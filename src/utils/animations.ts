@@ -62,12 +62,11 @@ export const slideInRight: Variants = {
 
 /* ── NEW: Reveal from bottom with blur ── */
 export const blurFadeIn: Variants = {
-  hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.8, ease: smooth },
+    transition: { duration: 0.6, ease: smooth },
   },
 }
 

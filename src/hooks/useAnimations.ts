@@ -72,20 +72,5 @@ export function useReducedMotion() {
   return prefersReducedMotion
 }
 
-export function useParallax(speed: number = 0.5) {
-  const [offset, setOffset] = useState(0)
-  const prefersReducedMotion = useReducedMotion()
-
-  useEffect(() => {
-    if (prefersReducedMotion) return
-
-    const handleScroll = () => {
-      setOffset(window.scrollY * speed)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [speed, prefersReducedMotion])
-
-  return offset
-}
+/* useParallax removed — scroll-driven state updates cause jank.
+   CSS scroll-driven animations or transform-based parallax via CSS is preferred. */

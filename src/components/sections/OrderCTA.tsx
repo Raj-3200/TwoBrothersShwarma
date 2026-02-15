@@ -17,9 +17,9 @@ const OrderCTA = memo(function OrderCTA() {
         {/* Delicious background – close-up shawarma on rotisserie */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/23025180/pexels-photo-23025180.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src="https://images.pexels.com/photos/23025180/pexels-photo-23025180.jpeg?auto=compress&cs=tinysrgb&w=1280"
             alt=""
-            className="w-full h-full object-cover scale-105"
+            className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
           />
@@ -35,24 +35,7 @@ const OrderCTA = memo(function OrderCTA() {
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent to-charcoal/40" />
         </div>
 
-        {/* Floating ember particles */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
-          {Array.from({ length: 12 }, (_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                left: `${5 + i * 8}%`,
-                top: `${15 + (i % 4) * 20}%`,
-                width: `${2 + (i % 3)}px`,
-                height: `${2 + (i % 3)}px`,
-                background: i % 2 === 0 ? 'rgba(232,117,10,0.4)' : 'rgba(255,255,255,0.15)',
-              }}
-              animate={{ y: [-15, 15, -15], opacity: [0.15, 0.5, 0.15] }}
-              transition={{ duration: 3.5 + i * 0.5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
-            />
-          ))}
-        </div>
+
 
         <motion.div
           className="container-max section-padding relative z-10 text-center"
@@ -63,7 +46,7 @@ const OrderCTA = memo(function OrderCTA() {
         >
           {/* Badge */}
           <motion.div variants={fadeInUp}>
-            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-white/10 text-white/90 border border-white/15 backdrop-blur-md shadow-lg">
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-white/10 text-white/90 border border-white/15 shadow-lg">
               🔥 Craving Shawarma?
             </span>
           </motion.div>
@@ -71,11 +54,11 @@ const OrderCTA = memo(function OrderCTA() {
           {/* Headline */}
           <motion.h2
             variants={fadeInUp}
-            className="mt-8 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-black text-white leading-tight drop-shadow-lg"
+            className="mt-8 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-black text-white leading-tight"
           >
             Don't Wait.
             <br />
-            <span className="text-flame-light drop-shadow-[0_0_30px_rgba(232,117,10,0.5)]">Order Now!</span>
+            <span className="text-flame-light">Order Now!</span>
           </motion.h2>
 
           <motion.p
@@ -86,28 +69,31 @@ const OrderCTA = memo(function OrderCTA() {
             <span className="block text-sm text-white/40 mt-2">Free delivery within 5km • Fresh & hot in 30 mins</span>
           </motion.p>
 
-          {/* Floating food images */}
+          {/* Food images */}
           <motion.div variants={fadeInUp} className="mt-10 flex items-center justify-center gap-4">
-            <motion.img
-              src="https://images.pexels.com/photos/5779364/pexels-photo-5779364.jpeg?auto=compress&cs=tinysrgb&w=800"
+            <img
+              src="https://images.pexels.com/photos/5779364/pexels-photo-5779364.jpeg?auto=compress&cs=tinysrgb&w=400"
               alt="Shawarma wrap"
               className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-flame/50 shadow-glow-flame"
-              animate={{ y: [-5, 5, -5] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              loading="lazy"
+              width="80"
+              height="80"
             />
-            <motion.img
-              src="https://images.pexels.com/photos/29850814/pexels-photo-29850814.jpeg?auto=compress&cs=tinysrgb&w=800"
+            <img
+              src="https://images.pexels.com/photos/29850814/pexels-photo-29850814.jpeg?auto=compress&cs=tinysrgb&w=400"
               alt="Grilled shawarma"
               className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-2 border-flame shadow-glow-flame"
-              animate={{ y: [5, -5, 5] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
+              loading="lazy"
+              width="96"
+              height="96"
             />
-            <motion.img
-              src="https://images.pexels.com/photos/18330008/pexels-photo-18330008.jpeg?auto=compress&cs=tinysrgb&w=800"
+            <img
+              src="https://images.pexels.com/photos/18330008/pexels-photo-18330008.jpeg?auto=compress&cs=tinysrgb&w=400"
               alt="Delicious wrap"
               className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-flame/50 shadow-glow-flame"
-              animate={{ y: [-5, 5, -5] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+              loading="lazy"
+              width="80"
+              height="80"
             />
           </motion.div>
 
@@ -117,55 +103,49 @@ const OrderCTA = memo(function OrderCTA() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             {/* Zomato */}
-            <motion.a
+            <a
               href={LINKS.zomato}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center"
+              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
               style={{
                 background: '#E23744',
                 boxShadow: '0 8px 30px rgba(226,55,68,0.4)',
               }}
-              whileHover={{ scale: 1.05, boxShadow: '0 12px 40px rgba(226,55,68,0.6)' }}
-              whileTap={{ scale: 0.97 }}
             >
               <span className="text-xl">🍽️</span>
               Order on Zomato
-            </motion.a>
+            </a>
 
             {/* Swiggy */}
-            <motion.a
+            <a
               href={LINKS.swiggy}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center"
+              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
               style={{
                 background: '#FC8019',
                 boxShadow: '0 8px 30px rgba(252,128,25,0.4)',
               }}
-              whileHover={{ scale: 1.05, boxShadow: '0 12px 40px rgba(252,128,25,0.6)' }}
-              whileTap={{ scale: 0.97 }}
             >
               <span className="text-xl">🛵</span>
               Order on Swiggy
-            </motion.a>
+            </a>
 
             {/* WhatsApp */}
-            <motion.a
+            <a
               href={LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center"
+              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
               style={{
                 background: '#25D366',
                 boxShadow: '0 8px 30px rgba(37,211,102,0.3)',
               }}
-              whileHover={{ scale: 1.05, boxShadow: '0 12px 40px rgba(37,211,102,0.5)' }}
-              whileTap={{ scale: 0.97 }}
             >
               <span className="text-xl">💬</span>
               WhatsApp Order
-            </motion.a>
+            </a>
           </motion.div>
 
           {/* Phone call */}
@@ -185,7 +165,7 @@ const OrderCTA = memo(function OrderCTA() {
         {/* Franchise background – beautiful restaurant/kitchen vibe */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/18177331/pexels-photo-18177331.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src="https://images.pexels.com/photos/18177331/pexels-photo-18177331.jpeg?auto=compress&cs=tinysrgb&w=1280"
             alt=""
             className="w-full h-full object-cover"
             loading="lazy"
@@ -210,7 +190,7 @@ const OrderCTA = memo(function OrderCTA() {
           <div className="text-center">
             <motion.span
               variants={fadeInUp}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-flame/20 text-flame-light border border-flame/30 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-flame/20 text-flame-light border border-flame/30"
             >
               🤝 Franchise Opportunity
             </motion.span>
@@ -267,7 +247,7 @@ const OrderCTA = memo(function OrderCTA() {
             </div>
 
             {/* Right – Contact card */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-center">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-center">
               {/* Founder info */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-flame/50 shadow-glow-flame flex-shrink-0">

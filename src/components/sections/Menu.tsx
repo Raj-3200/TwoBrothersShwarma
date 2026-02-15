@@ -14,7 +14,6 @@ const MenuCard = memo(function MenuCard({ item }: MenuCardProps) {
   const hasDiscount = !!originalPrice
   return (
     <motion.div
-      layout
       variants={scaleIn}
       className="group relative bg-charcoal-light/50 border border-cream/8 rounded-2xl overflow-hidden hover:border-flame/30 transition-all duration-500 shadow-soft hover:shadow-elevated"
     >
@@ -33,18 +32,18 @@ const MenuCard = memo(function MenuCard({ item }: MenuCardProps) {
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             {/* Veg / Non-veg indicator */}
-            <span className={`w-5 h-5 rounded-sm border-2 flex items-center justify-center backdrop-blur-sm bg-white/80 ${item.veg ? 'border-green-600' : 'border-red-600'}`}>
+            <span className={`w-5 h-5 rounded-sm border-2 flex items-center justify-center bg-white/80 ${item.veg ? 'border-green-600' : 'border-red-600'}`}>
               <span className={`w-2 h-2 rounded-full ${item.veg ? 'bg-green-600' : 'bg-red-600'}`} />
             </span>
             {item.popular && (
-              <span className="px-2 py-0.5 text-white text-[10px] font-bold rounded-md shadow-md backdrop-blur-sm"
+              <span className="px-2 py-0.5 text-white text-[10px] font-bold rounded-md shadow-md"
                 style={{ background: 'linear-gradient(135deg, #C93C20, #E8750A)' }}>
                 🔥 POPULAR
               </span>
             )}
           </div>
           {item.rating > 0 && (
-            <span className="flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-charcoal/70 backdrop-blur-md text-white shadow-sm">
+            <span className="flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-charcoal/70 text-white shadow-sm">
               ⭐ {item.rating}
             </span>
           )}
@@ -77,16 +76,14 @@ const MenuCard = memo(function MenuCard({ item }: MenuCardProps) {
               <span className="text-xs text-cream/30 line-through">₹{originalPrice}</span>
             )}
           </div>
-          <motion.a
+          <a
             href={LINKS.swiggy}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1.5 text-xs font-bold rounded-lg transition-all duration-300 border border-flame/40 text-flame hover:bg-flame hover:text-white hover:border-flame hover:shadow-glow-flame"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="px-4 py-1.5 text-xs font-bold rounded-lg transition-all duration-300 border border-flame/40 text-flame hover:bg-flame hover:text-white hover:border-flame hover:shadow-glow-flame hover:scale-105 active:scale-95"
           >
             Order
-          </motion.a>
+          </a>
         </div>
       </div>
 
@@ -137,7 +134,7 @@ const Menu = memo(function Menu() {
           viewport={{ once: true, margin: '-50px' }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
         >
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence>
             {PREVIEW_ITEMS.map((item) => (
               <MenuCard key={item.id} item={item} />
             ))}
@@ -152,17 +149,17 @@ const Menu = memo(function Menu() {
           viewport={{ once: true }}
           className="text-center mt-14"
         >
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+          <div>
             <Link
               to="/menu"
-              className="group inline-flex items-center gap-3 px-10 py-4 rounded-2xl font-heading font-bold text-base transition-all duration-300 border-2 border-flame text-white shadow-lg hover:shadow-glow-flame"
+              className="group inline-flex items-center gap-3 px-10 py-4 rounded-2xl font-heading font-bold text-base transition-all duration-300 border-2 border-flame text-white shadow-lg hover:shadow-glow-flame hover:scale-[1.03] active:scale-[0.97]"
               style={{ background: 'linear-gradient(135deg, #E8750A, #C93C20)' }}
             >
               <span>🔥</span>
               View Full Menu ({MENU_ITEMS.length} Items)
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
-          </motion.div>
+          </div>
           <p className="mt-3 text-cream/30 text-xs">
             Browse all categories • Search dishes • Filter by Veg/Non-Veg
           </p>

@@ -14,7 +14,6 @@ const MenuCard = memo(function MenuCard({ item }: MenuCardProps) {
   const hasDiscount = !!originalPrice
   return (
     <motion.div
-      layout
       variants={scaleIn}
       className="group relative bg-charcoal-light/50 border border-cream/8 rounded-2xl overflow-hidden hover:border-flame/30 transition-all duration-500 shadow-soft hover:shadow-elevated"
     >
@@ -32,18 +31,18 @@ const MenuCard = memo(function MenuCard({ item }: MenuCardProps) {
         {/* Top badges row */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
           <div className="flex items-center gap-1.5">
-            <span className={`w-5 h-5 rounded-sm border-2 flex items-center justify-center backdrop-blur-sm bg-white/80 ${item.veg ? 'border-green-600' : 'border-red-600'}`}>
+            <span className={`w-5 h-5 rounded-sm border-2 flex items-center justify-center bg-white/80 ${item.veg ? 'border-green-600' : 'border-red-600'}`}>
               <span className={`w-2 h-2 rounded-full ${item.veg ? 'bg-green-600' : 'bg-red-600'}`} />
             </span>
             {item.popular && (
-              <span className="px-2 py-0.5 text-white text-[10px] font-bold rounded-md shadow-md backdrop-blur-sm"
+              <span className="px-2 py-0.5 text-white text-[10px] font-bold rounded-md shadow-md"
                 style={{ background: 'linear-gradient(135deg, #C93C20, #E8750A)' }}>
                 🔥 POPULAR
               </span>
             )}
           </div>
           {item.rating > 0 && (
-            <span className="flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-charcoal/70 backdrop-blur-md text-white shadow-sm">
+            <span className="flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-charcoal/70 text-white shadow-sm">
               ⭐ {item.rating}
             </span>
           )}
@@ -217,7 +216,7 @@ const MenuPage = memo(function MenuPage() {
           className="mb-8"
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold bg-flame/10 text-flame border border-flame/20 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-flame animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-flame" />
             Full Menu
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-cream leading-tight">
@@ -326,7 +325,7 @@ const MenuPage = memo(function MenuPage() {
             animate="visible"
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
           >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence>
               {filteredItems.map((item) => (
                 <MenuCard key={item.id} item={item} />
               ))}

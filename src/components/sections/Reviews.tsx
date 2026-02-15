@@ -54,7 +54,7 @@ const ReviewCard = memo(function ReviewCard({
   return (
     <motion.div
       variants={fadeInUp}
-      className="group bg-charcoal-light/30 border border-cream/[0.06] rounded-2xl p-5 hover:border-flame/20 transition-all duration-500 hover:bg-charcoal-light/50 relative overflow-hidden backdrop-blur-sm"
+      className="group bg-charcoal-light/30 border border-cream/[0.06] rounded-2xl p-5 hover:border-flame/20 transition-all duration-500 hover:bg-charcoal-light/50 relative overflow-hidden"
     >
       {/* Subtle hover glow */}
       <div className="absolute -top-10 -right-10 w-24 h-24 bg-flame/[0.06] rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -117,7 +117,7 @@ const FeaturedReviews = memo(function FeaturedReviews() {
   }, [next])
 
   return (
-    <div className="relative bg-charcoal-light/30 backdrop-blur-sm border border-cream/[0.06] rounded-3xl p-6 sm:p-8 mb-12 overflow-hidden">
+    <div className="relative bg-charcoal-light/30 border border-cream/[0.06] rounded-3xl p-6 sm:p-8 mb-12 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-flame/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-24 h-24 bg-paprika/5 rounded-full blur-2xl" />
@@ -187,7 +187,7 @@ const RatingSummary = memo(function RatingSummary() {
   const total = distribution.reduce((a, b) => a + b.count, 0)
 
   return (
-    <div className="bg-charcoal-light/30 backdrop-blur-sm border border-cream/[0.06] rounded-2xl p-5 mb-8">
+    <div className="bg-charcoal-light/30 border border-cream/[0.06] rounded-2xl p-5 mb-8">
       <div className="flex flex-col sm:flex-row items-center gap-6">
         {/* Big rating */}
         <div className="text-center sm:text-left">
