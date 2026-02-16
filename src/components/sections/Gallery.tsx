@@ -6,6 +6,9 @@ import { fadeInUp, staggerContainer } from '@/utils/animations'
 
 /* Premium gallery with masonry-style layout */
 const Gallery = memo(function Gallery() {
+  /* Masonry pattern: indices 0,4,7 are tall (row-span-2) */
+  const tallIndices = new Set([0, 4, 7])
+
   return (
     <section id="gallery" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden">
       {/* Top wave from Reviews */}
@@ -36,8 +39,7 @@ const Gallery = memo(function Gallery() {
           className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5"
         >
           {GALLERY_IMAGES.map((img, i) => {
-            /* Alternate tall / wide images for magazine feel */
-            const isFeature = i === 0 || i === 3
+            const isFeature = tallIndices.has(i)
             return (
               <motion.div
                 key={img.id}

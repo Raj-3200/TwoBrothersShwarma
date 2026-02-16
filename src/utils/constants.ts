@@ -34,7 +34,7 @@ const IMG = {
   vegOpen:           P(9980764),
   vegTandoori:       P(34106240),
   vegTikka:          P(4899787),
-  vegPeriPeri:        'https://lh3.googleusercontent.com/p/AF1QipO9SlXQO6iMhl5G7KP1D6T0bLw4FSYZZMBxRtuE=s1360-w1360-h1020-rw',
+  vegPeriPeri:        P(29173093),
   vegCheese:         P(28442524),
   vegCheesy:         P(34216153),
   vegZerk:           P(27054747),
@@ -377,36 +377,15 @@ export const GOOGLE_REVIEWS = [
 ]
 
 export const GALLERY_IMAGES = [
-  {
-    id: 1,
-    url: P(29850814),
-    alt: 'Falafel Shawarma Wrap with Fries',
-  },
-  {
-    id: 2,
-    url: P(5779364),
-    alt: 'Close-up Sliced Shawarma',
-  },
-  {
-    id: 3,
-    url: P(18177341),
-    alt: 'Middle Eastern Wrap Platter',
-  },
-  {
-    id: 4,
-    url: P(29173105),
-    alt: 'Herb-Crusted Paneer Tikka',
-  },
-  {
-    id: 5,
-    url: P(28445587),
-    alt: 'Crispy Fried Momos',
-  },
-  {
-    id: 6,
-    url: P(115740),
-    alt: 'Crispy French Fries with Dips',
-  },
+  { id: 1, url: '/gallery/gallery-01.jpeg', alt: 'Two Brothers Shawarma Special' },
+  { id: 2, url: '/gallery/gallery-02.jpeg', alt: 'Freshly Grilled Shawarma' },
+  { id: 3, url: '/gallery/gallery-03.jpeg', alt: 'Our Signature Wrap' },
+  { id: 4, url: '/gallery/gallery-04.jpeg', alt: 'Loaded Chicken Shawarma' },
+  { id: 5, url: '/gallery/gallery-05.jpeg', alt: 'Double Cheese Delight' },
+  { id: 6, url: '/gallery/gallery-06.jpeg', alt: 'Freshly Prepared Goodness' },
+  { id: 7, url: '/gallery/gallery-07.jpeg', alt: 'Crispy Shawarma Platter' },
+  { id: 8, url: '/gallery/gallery-08.jpeg', alt: 'Our Kitchen in Action' },
+  { id: 9, url: '/gallery/gallery-09.jpeg', alt: 'Paneer Shawarma Special' },
 ]
 
 export const LINKS = {

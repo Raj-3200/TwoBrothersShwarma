@@ -3,27 +3,27 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useAnimations'
 import { fadeInUp, staggerContainer } from '@/utils/animations'
 
-/* ── Hero carousel — optimized image sizes (1280 instead of 1920) ── */
+/* ── Hero carousel — real Two Brothers Shawarma images + fallback ── */
 const HERO_IMAGES = [
   {
-    src: 'https://images.pexels.com/photos/12203625/pexels-photo-12203625.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    alt: 'Traditional shawarma meat on vertical grill',
+    src: '/gallery/gallery-13.jpeg',
+    alt: 'Two Brothers Shawarma — Our Signature',
   },
   {
-    src: 'https://images.pexels.com/photos/5779364/pexels-photo-5779364.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    alt: 'Close-up of freshly sliced shawarma wrap',
+    src: '/gallery/gallery-11.jpeg',
+    alt: 'Freshly Grilled Shawarma',
   },
   {
-    src: 'https://images.pexels.com/photos/5602502/pexels-photo-5602502.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    alt: 'Chef preparing fresh doner kebab',
+    src: '/gallery/gallery-14.jpeg',
+    alt: 'Loaded Chicken Shawarma',
   },
   {
-    src: 'https://images.pexels.com/photos/34434561/pexels-photo-34434561.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    alt: 'Juicy doner rotating on vertical grill',
+    src: '/gallery/gallery-10.jpeg',
+    alt: 'Our Kitchen in Action',
   },
   {
-    src: 'https://images.pexels.com/photos/13160092/pexels-photo-13160092.jpeg?auto=compress&cs=tinysrgb&w=1280',
-    alt: 'Shawarma rotating on spit in restaurant',
+    src: '/gallery/gallery-12.jpeg',
+    alt: 'Two Brothers Shawarma Platter',
   },
 ]
 
