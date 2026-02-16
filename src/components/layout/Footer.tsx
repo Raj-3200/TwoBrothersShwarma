@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { LINKS, OUTLETS } from '@/utils/constants'
+import Logo from '@/components/ui/Logo'
 
 const Footer = memo(function Footer() {
   return (
@@ -12,19 +13,10 @@ const Footer = memo(function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4 lg:col-span-1">
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center"
-                   style={{ background: 'linear-gradient(135deg, #E8750A 0%, #C2610A 100%)' }}>
-                <span className="text-white font-heading font-black text-lg">TB</span>
-              </div>
-              <div>
-                <span className="text-cream font-heading font-bold text-lg block leading-tight">Two Brothers</span>
-                <span className="text-flame text-[10px] font-bold tracking-[0.2em] uppercase">Shawarma • Nagpur</span>
-              </div>
-            </div>
+            <Logo size="md" />
             <p className="text-sm leading-relaxed text-cream/50">
               Nagpur's favorite shawarma destination. 4 outlets serving freshly grilled,
-              loaded-with-flavor shawarma. Rated 4.1⭐ on Google.
+              loaded-with-flavor shawarma. Rated 4.1 on Google.
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/two_brothers_shawarma/?hl=en" target="_blank" rel="noopener noreferrer"
@@ -66,7 +58,9 @@ const Footer = memo(function Footer() {
                 <li key={outlet.id}>
                   <a href={outlet.mapUrl} target="_blank" rel="noopener noreferrer"
                     className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2 group">
-                    <span className="text-flame/60">📍</span>
+                    <span className="text-flame/60">
+                      <svg className="w-3.5 h-3.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    </span>
                     {outlet.name.split('–')[1]?.trim() || outlet.name}
                   </a>
                 </li>
@@ -78,10 +72,10 @@ const Footer = memo(function Footer() {
           <div>
             <h4 className="text-cream font-heading font-bold text-sm uppercase tracking-wider mb-5">Order Now</h4>
             <ul className="space-y-2.5">
-              <li><a href={LINKS.zomato} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2">🍽️ Zomato</a></li>
-              <li><a href={LINKS.swiggy} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2">🛵 Swiggy</a></li>
-              <li><a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2">💬 WhatsApp</a></li>
-              <li><a href={LINKS.phone} className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2">📞 Call to Order</a></li>
+              <li><a href={LINKS.zomato} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2">Zomato</a></li>
+              <li><a href={LINKS.swiggy} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2">Swiggy</a></li>
+              <li><a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2">WhatsApp</a></li>
+              <li><a href={LINKS.phone} className="text-sm hover:text-flame transition-colors duration-200 flex items-center gap-2">Call to Order</a></li>
             </ul>
           </div>
         </div>

@@ -94,7 +94,9 @@ const ReviewCard = memo(function ReviewCard({
       {/* Price tag if exists */}
       {'priceRange' in review && review.priceRange && (
         <div className="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 bg-cream/5 border border-cream/8 rounded-lg relative z-10">
-          <span className="text-[11px] text-cream/40">💰</span>
+          <span className="text-[11px] text-cream/40">
+            <svg className="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </span>
           <span className="text-[11px] text-cream/50 font-medium">{review.priceRange}</span>
         </div>
       )}
@@ -247,7 +249,7 @@ const Reviews = memo(function Reviews() {
         {/* Highlighted quotes */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
           {[
-            '"Best in business.. must try 🤤🤤"',
+            '"Best in business.. must try"',
             '"Best service Best taste Yummy!!"',
             '"Best shawarma in Nagpur"',
           ].map((q) => (

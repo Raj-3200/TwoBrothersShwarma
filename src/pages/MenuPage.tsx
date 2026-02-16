@@ -37,13 +37,14 @@ const MenuCard = memo(function MenuCard({ item }: MenuCardProps) {
             {item.popular && (
               <span className="px-2 py-0.5 text-white text-[10px] font-bold rounded-md shadow-md"
                 style={{ background: 'linear-gradient(135deg, #C93C20, #E8750A)' }}>
-                🔥 POPULAR
+                POPULAR
               </span>
             )}
           </div>
           {item.rating > 0 && (
             <span className="flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-charcoal/70 text-white shadow-sm">
-              ⭐ {item.rating}
+              <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              {item.rating}
             </span>
           )}
         </div>
@@ -98,9 +99,9 @@ const RestaurantBanner = memo(function RestaurantBanner() {
     <div className="bg-charcoal-light/30 border border-cream/8 rounded-2xl p-6 sm:p-8 mb-10">
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
         {/* Logo / Badge */}
-        <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
+        <div className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden"
           style={{ background: 'linear-gradient(135deg, #E8750A, #C93C20)' }}>
-          🔥
+          <span className="font-heading font-black text-xl text-white">TB</span>
         </div>
 
         <div className="flex-1">
@@ -108,7 +109,8 @@ const RestaurantBanner = memo(function RestaurantBanner() {
           <p className="text-cream/50 text-sm mt-1">Lebanese, Momos • Gayatri Nagar, Nagpur</p>
           <div className="flex flex-wrap items-center gap-3 mt-2">
             <span className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-green-600/20 text-green-400 border border-green-600/30">
-              ⭐ 4.4 <span className="text-green-400/60">(3.8K+ ratings)</span>
+              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              4.4 <span className="text-green-400/60">(3.8K+ ratings)</span>
             </span>
             <span className="text-cream/40 text-xs">₹300 for two</span>
             <span className="text-cream/40 text-xs">•</span>
@@ -125,7 +127,7 @@ const RestaurantBanner = memo(function RestaurantBanner() {
             className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:scale-105"
             style={{ background: '#FC8019' }}
           >
-            🛵 Order on Swiggy
+            Order on Swiggy
           </a>
           <a
             href={LINKS.zomato}
@@ -134,7 +136,7 @@ const RestaurantBanner = memo(function RestaurantBanner() {
             className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:scale-105"
             style={{ background: '#E23744' }}
           >
-            🍽️ Zomato
+            Zomato
           </a>
         </div>
       </div>
@@ -245,7 +247,9 @@ const MenuPage = memo(function MenuPage() {
         >
           {/* Search */}
           <div className="relative flex-1">
-            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-cream/30 text-sm">🔍</span>
+            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-cream/30 text-sm">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+          </span>
             <input
               type="text"
               placeholder="Search for dishes..."
@@ -337,7 +341,6 @@ const MenuPage = memo(function MenuPage() {
             animate={{ opacity: 1 }}
             className="text-center py-20"
           >
-            <p className="text-5xl mb-4">🥙</p>
             <p className="text-cream/40 text-lg">No items found</p>
             <p className="text-cream/25 text-sm mt-1">Try a different search or category</p>
             <button
@@ -371,7 +374,7 @@ const MenuPage = memo(function MenuPage() {
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold text-white transition-all hover:scale-105"
                 style={{ background: '#FC8019' }}
               >
-                🛵 Swiggy
+                Swiggy
               </a>
               <a
                 href={LINKS.zomato}
@@ -380,7 +383,7 @@ const MenuPage = memo(function MenuPage() {
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold text-white transition-all hover:scale-105"
                 style={{ background: '#E23744' }}
               >
-                🍽️ Zomato
+                Zomato
               </a>
             </div>
             <p className="text-cream/20 text-[11px] mt-1">Prices may vary. Order directly for latest prices.</p>

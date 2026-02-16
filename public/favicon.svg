@@ -1,4 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-  <rect width="40" height="40" rx="8" fill="#1E1E1E"/>
-  <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="16" fill="#F97316">TB</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8750A"/>
+      <stop offset="50%" stop-color="#C2610A"/>
+      <stop offset="100%" stop-color="#A85209"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="10" fill="url(#bg)"/>
+  <!-- Decorative arc -->
+  <path d="M6 34 C6 16 16 6 34 6" stroke="rgba(255,255,255,0.15)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M10 34 C10 20 20 10 34 10" stroke="rgba(255,255,255,0.07)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <!-- TB monogram -->
+  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="'Inter Tight', system-ui, sans-serif" font-weight="900" font-size="15" fill="white" letter-spacing="0.5">TB</text>
 </svg>

@@ -47,7 +47,7 @@ const OrderCTA = memo(function OrderCTA() {
           {/* Badge */}
           <motion.div variants={fadeInUp}>
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-white/10 text-white/90 border border-white/15 shadow-lg">
-              🔥 Craving Shawarma?
+              Craving Shawarma?
             </span>
           </motion.div>
 
@@ -113,7 +113,7 @@ const OrderCTA = memo(function OrderCTA() {
                 boxShadow: '0 8px 30px rgba(226,55,68,0.4)',
               }}
             >
-              <span className="text-xl">🍽️</span>
+              <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg></span>
               Order on Zomato
             </a>
 
@@ -128,7 +128,7 @@ const OrderCTA = memo(function OrderCTA() {
                 boxShadow: '0 8px 30px rgba(252,128,25,0.4)',
               }}
             >
-              <span className="text-xl">🛵</span>
+              <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg></span>
               Order on Swiggy
             </a>
 
@@ -143,7 +143,7 @@ const OrderCTA = memo(function OrderCTA() {
                 boxShadow: '0 8px 30px rgba(37,211,102,0.3)',
               }}
             >
-              <span className="text-xl">💬</span>
+              <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg></span>
               WhatsApp Order
             </a>
           </motion.div>
@@ -154,7 +154,7 @@ const OrderCTA = memo(function OrderCTA() {
               href={LINKS.phone}
               className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm"
             >
-              📞 Or call us at <span className="font-bold text-white/80">+91 7517736138</span>
+              Or call us at <span className="font-bold text-white/80">+91 7517736138</span>
             </a>
           </motion.div>
         </motion.div>
@@ -192,7 +192,7 @@ const OrderCTA = memo(function OrderCTA() {
               variants={fadeInUp}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-flame/20 text-flame-light border border-flame/30"
             >
-              🤝 Franchise Opportunity
+              Franchise Opportunity
             </motion.span>
             <motion.h3
               variants={fadeInUp}
@@ -270,7 +270,7 @@ const OrderCTA = memo(function OrderCTA() {
                 {[
                   { value: '4', label: 'Outlets' },
                   { value: '54+', label: 'Menu Items' },
-                  { value: '4.4★', label: 'Rating' },
+                  { value: '4.4', label: 'Rating' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center py-3 bg-white/5 rounded-xl border border-white/5">
                     <div className="text-lg font-bold text-flame-light">{stat.value}</div>
@@ -289,13 +289,13 @@ const OrderCTA = memo(function OrderCTA() {
                   href="tel:+918668851656"
                   className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-herb hover:bg-herb/80 transition-all duration-300 hover:scale-[1.02] justify-center"
                 >
-                  📞 Call Now — +91 86688 51656
+                  Call Now — +91 86688 51656
                 </a>
                 <a
                   href="mailto:chefraza6688@gmail.com"
                   className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-white/10 hover:bg-white/20 border border-white/15 transition-all duration-300 hover:scale-[1.02] justify-center"
                 >
-                  ✉️ chefraza6688@gmail.com
+                  chefraza6688@gmail.com
                 </a>
               </div>
             </div>

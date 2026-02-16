@@ -173,7 +173,7 @@ const Hero = memo(function Hero() {
               boxShadow: '0 4px 25px rgba(226,55,68,0.35)',
             }}
           >
-            <span className="text-xl">🍽️</span>
+            <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg></span>
             Order on Zomato
           </a>
           <a
@@ -186,7 +186,7 @@ const Hero = memo(function Hero() {
               boxShadow: '0 4px 25px rgba(252,128,25,0.35)',
             }}
           >
-            <span className="text-xl">🛵</span>
+            <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg></span>
             Order on Swiggy
           </a>
           <a
@@ -229,7 +229,9 @@ const Hero = memo(function Hero() {
                 {i > 0 && (
                   <span className="w-0.5 h-0.5 rounded-full bg-cream/20 mr-1.5 hidden sm:inline-block" />
                 )}
-                <span className="text-flame/40">📍</span> {outlet}
+                <span className="text-flame/40">
+                  <svg className="w-3 h-3 inline" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
+                </span> {outlet}
               </span>
             ),
           )}

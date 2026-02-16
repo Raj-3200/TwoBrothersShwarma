@@ -1,6 +1,7 @@
 import { useState, useEffect, memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import Logo from '@/components/ui/Logo'
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -41,20 +42,8 @@ const Navbar = memo(function Navbar() {
     }`}>
       <nav className="container-max section-padding flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="relative w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 overflow-hidden"
-               style={{ background: 'linear-gradient(135deg, #E8750A 0%, #C2610A 100%)' }}>
-            <span className="text-white font-heading font-black text-lg relative z-10">TB</span>
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-          <div className="hidden sm:block">
-            <span className="text-cream font-heading font-bold text-lg leading-tight block tracking-tight">
-              Two Brothers
-            </span>
-            <span className="text-flame text-[10px] font-bold tracking-[0.2em] uppercase">
-              Shawarma • Nagpur
-            </span>
-          </div>
+        <Link to="/" className="group">
+          <Logo size="md" />
         </Link>
 
         {/* Desktop Nav */}
@@ -76,7 +65,7 @@ const Navbar = memo(function Navbar() {
             rel="noopener noreferrer"
             className="btn-primary text-sm py-2.5 px-5 ml-3"
           >
-            🔥 Order Now
+            Order Now
           </a>
         </div>
 
@@ -125,7 +114,7 @@ const Navbar = memo(function Navbar() {
                 rel="noopener noreferrer"
                 className="btn-primary text-center mt-3"
               >
-                🔥 Order Now
+                Order Now
               </a>
             </div>
           </motion.div>

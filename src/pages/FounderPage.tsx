@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from '@/utils/animations'
 
 const expertise = [
-  { icon: '👨‍🍳', title: 'Culinary Mastery', desc: '18+ years of hands-on experience in cooking and recipe innovation across international kitchens.' },
-  { icon: '🏨', title: 'Five-Star Hotels', desc: 'Worked with renowned brands — Jaypee, Park Plaza, Sarovar, Radisson and more.' },
-  { icon: '🍽️', title: 'F&B Management', desc: 'Expert in food & beverage operations, menu innovation, catering, and hospitality management.' },
-  { icon: '🚀', title: 'Pre-Opening Specialist', desc: 'Spearheaded pre-opening operations for multiple hotels and restaurants, ensuring smooth launches.' },
+  { icon: 'chef', title: 'Culinary Mastery', desc: '18+ years of hands-on experience in cooking and recipe innovation across international kitchens.' },
+  { icon: 'hotel', title: 'Five-Star Hotels', desc: 'Worked with renowned brands — Jaypee, Park Plaza, Sarovar, Radisson and more.' },
+  { icon: 'food', title: 'F&B Management', desc: 'Expert in food & beverage operations, menu innovation, catering, and hospitality management.' },
+  { icon: 'launch', title: 'Pre-Opening Specialist', desc: 'Spearheaded pre-opening operations for multiple hotels and restaurants, ensuring smooth launches.' },
 ]
 
 const timeline = [
@@ -118,14 +118,18 @@ const FounderPage = memo(function FounderPage() {
                   href="tel:+918668851656"
                   className="flex items-center gap-2.5 px-4 py-3 bg-cream/[0.04] border border-cream/10 rounded-xl text-cream/70 hover:border-flame/30 hover:text-flame transition-all duration-300 group"
                 >
-                  <span className="w-8 h-8 rounded-lg bg-flame/10 flex items-center justify-center group-hover:bg-flame/20 transition-colors">📞</span>
+                  <span className="w-8 h-8 rounded-lg bg-flame/10 flex items-center justify-center group-hover:bg-flame/20 transition-colors">
+                  <svg className="w-4 h-4 text-flame" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                </span>
                   <span className="text-sm font-medium">8668851656</span>
                 </a>
                 <a
                   href="mailto:chefraza6688@gmail.com"
                   className="flex items-center gap-2.5 px-4 py-3 bg-cream/[0.04] border border-cream/10 rounded-xl text-cream/70 hover:border-flame/30 hover:text-flame transition-all duration-300 group"
                 >
-                  <span className="w-8 h-8 rounded-lg bg-flame/10 flex items-center justify-center group-hover:bg-flame/20 transition-colors">✉️</span>
+                  <span className="w-8 h-8 rounded-lg bg-flame/10 flex items-center justify-center group-hover:bg-flame/20 transition-colors">
+                  <svg className="w-4 h-4 text-flame" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                </span>
                   <span className="text-sm font-medium">chefraza6688@gmail.com</span>
                 </a>
               </div>
@@ -165,7 +169,12 @@ const FounderPage = memo(function FounderPage() {
                 variants={fadeInUp}
                 className="bg-charcoal-light/40 border border-cream/8 rounded-2xl p-6 text-center hover:border-flame/25 transition-all duration-300 group"
               >
-                <span className="text-3xl block mb-3">{item.icon}</span>
+                <span className="text-3xl block mb-3">
+                  {item.icon === 'chef' && <svg className="w-7 h-7 mx-auto text-flame" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 6.75 6.75 0 0112 2.25a6.726 6.726 0 013.362 2.964zM12 18a5.25 5.25 0 100-10.5 5.25 5.25 0 000 10.5z" /></svg>}
+                  {item.icon === 'hotel' && <svg className="w-7 h-7 mx-auto text-flame" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0V8.25" /></svg>}
+                  {item.icon === 'food' && <svg className="w-7 h-7 mx-auto text-flame" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>}
+                  {item.icon === 'launch' && <svg className="w-7 h-7 mx-auto text-flame" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m6 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.58-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /></svg>}
+                </span>
                 <h3 className="font-heading font-bold text-base text-cream group-hover:text-flame transition-colors">{item.title}</h3>
                 <p className="text-sm text-cream/45 mt-2 leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -264,16 +273,20 @@ const FounderPage = memo(function FounderPage() {
             viewport={{ once: true }}
           >
             {[
-              { icon: '🌯', title: 'Our Mission', desc: 'To serve the freshest, most flavorful shawarma in Nagpur at prices everyone can afford.' },
-              { icon: '⭐', title: 'Our Values', desc: 'Quality ingredients, honest pricing, and a commitment to making every customer smile.' },
-              { icon: '🚀', title: 'Our Vision', desc: 'To become Maharashtra\'s most loved shawarma chain, one delicious wrap at a time.' },
+              { icon: 'mission', title: 'Our Mission', desc: 'To serve the freshest, most flavorful shawarma in Nagpur at prices everyone can afford.' },
+              { icon: 'values', title: 'Our Values', desc: 'Quality ingredients, honest pricing, and a commitment to making every customer smile.' },
+              { icon: 'vision', title: 'Our Vision', desc: 'To become Maharashtra\'s most loved shawarma chain, one delicious wrap at a time.' },
             ].map((card) => (
               <motion.div
                 key={card.title}
                 variants={fadeInUp}
                 className="bg-charcoal-light/40 border border-cream/8 rounded-2xl p-6 text-center hover:border-flame/25 transition-all duration-300 group"
               >
-                <span className="text-3xl block mb-3">{card.icon}</span>
+                <span className="text-3xl block mb-3">
+                  {card.icon === 'mission' && <svg className="w-7 h-7 mx-auto text-flame" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>}
+                  {card.icon === 'values' && <svg className="w-7 h-7 mx-auto text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>}
+                  {card.icon === 'vision' && <svg className="w-7 h-7 mx-auto text-flame" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m6 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.58-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /></svg>}
+                </span>
                 <h3 className="font-heading font-bold text-lg text-cream group-hover:text-flame transition-colors">{card.title}</h3>
                 <p className="text-sm text-cream/50 mt-2 leading-relaxed">{card.desc}</p>
               </motion.div>
