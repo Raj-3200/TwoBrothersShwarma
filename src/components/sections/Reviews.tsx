@@ -54,10 +54,11 @@ const ReviewCard = memo(function ReviewCard({
   return (
     <motion.div
       variants={fadeInUp}
-      className="group bg-charcoal-light/30 border border-cream/[0.06] rounded-2xl p-5 hover:border-flame/20 transition-all duration-500 hover:bg-charcoal-light/50 relative overflow-hidden"
+      className="group bg-charcoal-light/30 border border-cream/[0.06] rounded-2xl p-5 hover:border-flame/20 hover:bg-charcoal-light/50 relative overflow-hidden"
+      style={{ transition: `border-color ${420 + (index % 5) * 30}ms ease, background ${450 + (index % 5) * 25}ms ease` }}
     >
       {/* Subtle hover glow */}
-      <div className="absolute -top-10 -right-10 w-24 h-24 bg-flame/[0.06] rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      <div className="absolute -top-10 -right-10 w-24 h-24 bg-flame/[0.05] rounded-full blur-3xl opacity-0 group-hover:opacity-100" style={{ transition: 'opacity 0.6s ease' }} />
 
       {/* Header: avatar + name + time */}
       <div className="flex items-start gap-3 mb-3 relative z-10">
@@ -226,7 +227,7 @@ const Reviews = memo(function Reviews() {
   const visibleReviews = showAll ? GOOGLE_REVIEWS : GOOGLE_REVIEWS.slice(0, 9)
 
   return (
-    <section id="reviews" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden">
+    <section id="reviews" className="py-20 lg:py-28 bg-dark-section-warm relative overflow-hidden grain-overlay">
       {/* Decorative */}
       <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-flame/[0.03] rounded-full blur-[80px]" />
       <div className="absolute bottom-1/4 right-0 w-[300px] h-[300px] bg-paprika/[0.03] rounded-full blur-[80px]" />
@@ -236,7 +237,7 @@ const Reviews = memo(function Reviews() {
           badge="Google Reviews"
           title="What Our"
           highlight="Customers Say"
-          subtitle="Real reviews from real customers. We're proud of every single one."
+          subtitle="Real talk from real people. No scripts, no filters — just honest reviews."
           light
         />
 

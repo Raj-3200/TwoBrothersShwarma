@@ -20,7 +20,7 @@ const VideoShowcase = memo(function VideoShowcase() {
   }, [isInView])
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section ref={sectionRef} className="relative overflow-hidden grain-overlay">
       {/* Top transition gradient */}
       <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-charcoal to-transparent z-10 pointer-events-none" />
 
@@ -67,12 +67,12 @@ const VideoShowcase = memo(function VideoShowcase() {
                 <span className="w-12 h-px bg-flame/50" />
               </div>
 
-              <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cream leading-tight">
-                Crafted with{' '}
-                <span className="text-gradient-warm">Passion</span>
+              <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cream leading-[1.08] tracking-[-0.02em]">
+                Made with{' '}
+                <span className="text-gradient-warm">Real Fire</span>
               </h2>
-              <p className="mt-3 text-cream/50 text-sm sm:text-base lg:text-lg max-w-xl mx-auto font-light">
-                Every shawarma is hand-rolled, freshly grilled, and packed
+              <p className="mt-3 text-cream/45 text-sm sm:text-base lg:text-lg max-w-xl mx-auto font-light leading-relaxed">
+                Hand-rolled, grilled over open flame, packed
                 with love — right here in Nagpur.
               </p>
 

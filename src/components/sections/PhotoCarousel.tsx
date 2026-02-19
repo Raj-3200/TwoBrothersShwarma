@@ -108,7 +108,7 @@ const PhotoCarousel = memo(function PhotoCarousel() {
   }
 
   return (
-    <section className="py-20 lg:py-28 bg-dark-section relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-dark-section-warm relative overflow-hidden grain-overlay">
       {/* Decorative glows */}
       <div className="absolute top-20 left-10 w-[350px] h-[350px] bg-flame/[0.03] rounded-full blur-[100px]" />
       <div className="absolute bottom-20 right-10 w-[300px] h-[300px] bg-paprika/[0.04] rounded-full blur-[80px]" />
@@ -118,7 +118,7 @@ const PhotoCarousel = memo(function PhotoCarousel() {
           badge="Our Gallery"
           title="Real Food,"
           highlight="Real Vibes"
-          subtitle="Straight from our kitchen to our outlets — see what makes Two Brothers Shawarma special."
+          subtitle="Straight from our kitchen, across all four outlets. No stock photos, just us."
           light
         />
 

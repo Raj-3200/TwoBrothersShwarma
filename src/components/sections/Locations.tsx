@@ -8,7 +8,7 @@ const Locations = memo(function Locations() {
   const [activeOutlet, setActiveOutlet] = useState(0)
 
   return (
-    <section id="locations" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden">
+    <section id="locations" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden grain-overlay">
       {/* Decorative */}
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-flame/[0.03] rounded-full blur-[80px]" />
       <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-paprika/[0.03] rounded-full blur-[80px]" />
@@ -18,7 +18,7 @@ const Locations = memo(function Locations() {
           badge="Find Us"
           title="Our"
           highlight="Locations"
-          subtitle="4 outlets across Nagpur serving you the best shawarma. Visit your nearest branch!"
+          subtitle="4 outlets across Nagpur. Freshly grilled shawarma, always close by."
           light
         />
 

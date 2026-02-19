@@ -46,9 +46,11 @@ export default {
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'card': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'elevated': '0 20px 50px -12px rgba(0, 0, 0, 0.2)',
+        'card': '0 4px 25px -5px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.05)',
+        'elevated': '0 20px 50px -12px rgba(0, 0, 0, 0.25)',
+        'inner-warm': 'inset 0 2px 8px rgba(232, 117, 10, 0.06)',
         'glow-flame': '0 0 25px rgba(232, 117, 10, 0.35)',
+        'glow-flame-soft': '0 0 40px rgba(232, 117, 10, 0.2)',
         'glow-paprika': '0 0 25px rgba(201, 60, 32, 0.25)',
       },
       animation: {

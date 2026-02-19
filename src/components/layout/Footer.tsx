@@ -7,16 +7,16 @@ const Footer = memo(function Footer() {
   return (
     <footer className="bg-charcoal-dark text-cream/60 relative overflow-hidden">
       {/* Warm accent glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-flame/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-flame/[0.04] rounded-full blur-3xl" />
 
       <div className="container-max section-padding py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4 lg:col-span-1">
             <Logo size="md" />
-            <p className="text-sm leading-relaxed text-cream/50">
-              Nagpur's favorite shawarma destination. 4 outlets serving freshly grilled,
-              loaded-with-flavor shawarma. Rated 4.1 on Google.
+            <p className="text-sm leading-relaxed text-cream/45">
+              Nagpur's go-to shawarma spot. 4 outlets, freshly grilled,
+              packed with flavour. Rated 4.1 on Google.
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/two_brothers_shawarma/?hl=en" target="_blank" rel="noopener noreferrer"

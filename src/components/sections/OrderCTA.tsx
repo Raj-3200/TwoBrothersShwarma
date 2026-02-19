@@ -5,7 +5,7 @@ import { LINKS } from '@/utils/constants'
 
 const OrderCTA = memo(function OrderCTA() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden grain-overlay">
       {/* Top wave transition */}
       <div className="absolute top-0 inset-x-0 pointer-events-none overflow-hidden leading-[0] z-20 rotate-180">
         <svg viewBox="0 0 1200 60" preserveAspectRatio="none" className="w-full h-6 sm:h-10 lg:h-14">
@@ -47,26 +47,26 @@ const OrderCTA = memo(function OrderCTA() {
           {/* Badge */}
           <motion.div variants={fadeInUp}>
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-white/10 text-white/90 border border-white/15 shadow-lg">
-              Craving Shawarma?
+              Hungry yet?
             </span>
           </motion.div>
 
           {/* Headline */}
           <motion.h2
             variants={fadeInUp}
-            className="mt-8 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-black text-white leading-tight"
+            className="mt-8 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-black text-white leading-[1.05] tracking-[-0.02em]"
           >
             Don't Wait.
             <br />
-            <span className="text-flame-light">Order Now!</span>
+            <span className="text-flame-light">Order Now.</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="mt-5 text-lg sm:text-xl text-white/70 max-w-xl mx-auto"
+            className="mt-5 text-lg sm:text-xl text-white/65 max-w-xl mx-auto"
           >
-            Available on Zomato, Swiggy, or order directly via WhatsApp.
-            <span className="block text-sm text-white/40 mt-2">Free delivery within 5km • Fresh & hot in 30 mins</span>
+            We're on Zomato, Swiggy, and WhatsApp. Pick your favourite.
+            <span className="block text-sm text-white/35 mt-2">Free delivery within 5km &middot; Hot in 30 mins</span>
           </motion.p>
 
           {/* Food images */}
@@ -107,10 +107,11 @@ const OrderCTA = memo(function OrderCTA() {
               href={LINKS.zomato}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
+              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
               style={{
                 background: '#E23744',
                 boxShadow: '0 8px 30px rgba(226,55,68,0.4)',
+                transition: 'transform 0.25s cubic-bezier(0.22,1,0.36,1)',
               }}
             >
               <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg></span>
@@ -122,10 +123,11 @@ const OrderCTA = memo(function OrderCTA() {
               href={LINKS.swiggy}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
+              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
               style={{
                 background: '#FC8019',
                 boxShadow: '0 8px 30px rgba(252,128,25,0.4)',
+                transition: 'transform 0.28s cubic-bezier(0.22,1,0.36,1)',
               }}
             >
               <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg></span>
@@ -137,10 +139,11 @@ const OrderCTA = memo(function OrderCTA() {
               href={LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white transition-all duration-300 min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
+              className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
               style={{
                 background: '#25D366',
                 boxShadow: '0 8px 30px rgba(37,211,102,0.3)',
+                transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1)',
               }}
             >
               <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg></span>
@@ -202,9 +205,9 @@ const OrderCTA = memo(function OrderCTA() {
             </motion.h3>
             <motion.p
               variants={fadeInUp}
-              className="mt-4 text-white/60 text-base sm:text-lg max-w-lg mx-auto"
+              className="mt-4 text-white/55 text-base sm:text-lg max-w-lg mx-auto"
             >
-              Interested in opening a franchise? Get in touch with our founder for partnership details and franchise enquiries.
+              Like the taste? Bring it to your city. We're looking for franchise partners who share our passion.
             </motion.p>
           </div>
 
@@ -279,8 +282,8 @@ const OrderCTA = memo(function OrderCTA() {
                 ))}
               </div>
 
-              <p className="text-white/50 text-sm mb-6 leading-relaxed">
-                Join the fastest-growing shawarma brand in Nagpur. Low investment, high returns, full training & support provided.
+              <p className="text-white/45 text-sm mb-6 leading-relaxed">
+                Join Nagpur's fastest-growing shawarma brand. Low investment, strong returns, complete training & support.
               </p>
 
               {/* Contact buttons */}

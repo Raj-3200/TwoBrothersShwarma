@@ -15,14 +15,16 @@ const MenuCard = memo(function MenuCard({ item }: MenuCardProps) {
   return (
     <motion.div
       variants={scaleIn}
-      className="group relative bg-charcoal-light/50 border border-cream/8 rounded-2xl overflow-hidden hover:border-flame/30 transition-all duration-500 shadow-soft hover:shadow-elevated"
+      className="group relative bg-charcoal-light/50 border border-cream/8 rounded-2xl overflow-hidden hover:border-flame/30 shadow-soft hover:shadow-elevated"
+      style={{ transition: 'border-color 0.4s ease, box-shadow 0.5s ease' }}
     >
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={item.image}
           alt={item.name}
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]"
+          className="w-full h-full object-cover group-hover:scale-[1.06]"
+          style={{ transition: 'transform 0.65s cubic-bezier(0.22,1,0.36,1)' }}
           loading="lazy"
           decoding="async"
         />
@@ -64,7 +66,7 @@ const MenuCard = memo(function MenuCard({ item }: MenuCardProps) {
 
       {/* Content */}
       <div className="p-4 sm:p-5">
-        <h3 className="font-heading font-bold text-[15px] text-cream/90 group-hover:text-flame transition-colors duration-300 leading-snug line-clamp-1">
+        <h3 className="font-heading font-bold text-[15px] text-cream/90 group-hover:text-flame leading-snug line-clamp-1" style={{ transition: 'color 0.35s ease' }}>
           {item.name}
         </h3>
         <p className="mt-1.5 text-xs text-cream/40 leading-relaxed line-clamp-2 min-h-[2.5rem]">
@@ -99,7 +101,7 @@ const PREVIEW_ITEMS = MENU_ITEMS.filter((item) => item.popular).slice(0, 6)
 
 const Menu = memo(function Menu() {
   return (
-    <section id="menu" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden">
+    <section id="menu" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden grain-overlay">
       {/* Decorative glows */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-flame/[0.04] rounded-full blur-[100px]" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-paprika/[0.03] rounded-full blur-[80px]" />
@@ -109,7 +111,7 @@ const Menu = memo(function Menu() {
           badge="Our Menu"
           title="Best Sellers &"
           highlight="Fan Favourites"
-          subtitle="A sneak peek at our most-loved shawarmas — freshly prepared with premium ingredients. ₹89 – ₹289."
+          subtitle="Here's what people keep coming back for. Freshly made, loaded with flavour. \u20B989 – \u20B9289."
           light
         />
 
@@ -161,7 +163,7 @@ const Menu = memo(function Menu() {
             </Link>
           </div>
           <p className="mt-3 text-cream/30 text-xs">
-            Browse all categories • Search dishes • Filter by Veg/Non-Veg
+            All categories · Search dishes · Veg / Non-Veg filter
           </p>
         </motion.div>
       </div>

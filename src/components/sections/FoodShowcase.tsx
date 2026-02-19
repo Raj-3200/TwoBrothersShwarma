@@ -64,7 +64,7 @@ const FoodShowcase = memo(function FoodShowcase() {
   const item = SHOWCASE[active]
 
   return (
-    <section className="relative bg-dark-section overflow-hidden">
+    <section className="relative bg-dark-section overflow-hidden grain-overlay">
       {/* ── Top edge fade from hero ── */}
       <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-charcoal to-transparent z-10 pointer-events-none" />
 
@@ -92,23 +92,23 @@ const FoodShowcase = memo(function FoodShowcase() {
 
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-cream leading-tight"
+            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-heading font-extrabold text-cream leading-[1.1] tracking-[-0.02em]"
           >
             Taste the <span className="text-gradient-warm">Difference</span>
           </motion.h2>
 
           {/* Decorative divider */}
           <motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mt-5">
-            <span className="h-px w-12 bg-gradient-to-r from-transparent to-flame/40" />
-            <span className="w-2 h-2 rounded-full bg-flame/50" />
-            <span className="h-px w-12 bg-gradient-to-l from-transparent to-flame/40" />
+            <span className="h-px w-10 bg-gradient-to-r from-transparent to-flame/30" />
+            <span className="w-1.5 h-1.5 rounded-full bg-flame/40" />
+            <span className="h-px w-10 bg-gradient-to-l from-transparent to-flame/30" />
           </motion.div>
 
           <motion.p
             variants={fadeInUp}
-            className="mt-5 text-base lg:text-lg text-cream/50 max-w-xl mx-auto"
+            className="mt-5 text-[15px] lg:text-base text-cream/45 max-w-lg mx-auto"
           >
-            Every wrap, every bite — crafted with 18 years of culinary expertise.
+            Each wrap tells a story — 18 years of kitchen craft in every single bite.
           </motion.p>
         </motion.div>
 
@@ -190,19 +190,21 @@ const FoodShowcase = memo(function FoodShowcase() {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`group relative rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-500 border-2 text-left ${
+                className={`group relative rounded-xl lg:rounded-2xl overflow-hidden border-2 text-left ${
                   i === active
                     ? 'border-flame shadow-glow-flame ring-1 ring-flame/20'
                     : 'border-cream/5 hover:border-flame/25'
                 }`}
+                style={{ transition: `all ${450 + i * 30}ms cubic-bezier(0.22,1,0.36,1)` }}
               >
                 <div className="relative aspect-[4/3] lg:aspect-[16/9]">
                   <img
                     src={dish.img}
                     alt={dish.label}
-                    className={`w-full h-full object-cover transition-all duration-500 ${
+                    className={`w-full h-full object-cover ${
                       i === active ? 'scale-105 brightness-110' : 'brightness-75 group-hover:brightness-100 group-hover:scale-105'
                     }`}
+                    style={{ transition: `transform ${500 + i * 40}ms cubic-bezier(0.22,1,0.36,1), filter 400ms ease` }}
                     loading="lazy"
                     decoding="async"
                   />

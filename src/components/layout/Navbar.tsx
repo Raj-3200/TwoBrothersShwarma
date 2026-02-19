@@ -56,7 +56,7 @@ const Navbar = memo(function Navbar() {
               className="text-cream/70 hover:text-flame font-medium text-sm px-4 py-2 rounded-lg transition-all duration-200 hover:bg-cream/5 relative group"
             >
               {link.label}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-flame transition-all duration-300 group-hover:w-3/4 rounded-full" />
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-flame rounded-full group-hover:w-3/4" style={{ transition: 'width 0.35s cubic-bezier(0.22,1,0.36,1)' }} />
             </Link>
           ))}
           <a

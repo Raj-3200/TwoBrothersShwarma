@@ -10,7 +10,7 @@ const Gallery = memo(function Gallery() {
   const tallIndices = new Set([0, 4, 7])
 
   return (
-    <section id="gallery" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden">
+    <section id="gallery" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden grain-overlay">
       {/* Top wave from Reviews */}
       <div className="absolute top-0 inset-x-0 pointer-events-none overflow-hidden leading-[0] rotate-180">
         <svg viewBox="0 0 1200 60" preserveAspectRatio="none" className="w-full h-6 sm:h-10 lg:h-14">
@@ -26,7 +26,7 @@ const Gallery = memo(function Gallery() {
           badge="Gallery"
           title="Feast Your"
           highlight="Eyes"
-          subtitle="Every dish is a work of art. Take a look at what we're serving across our 4 outlets."
+          subtitle="Straight from our kitchen to your screen. This is what we serve across all 4 outlets."
           light
         />
 
@@ -51,9 +51,10 @@ const Gallery = memo(function Gallery() {
                 <img
                   src={img.url}
                   alt={img.alt}
-                  className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06] ${
+                  className={`w-full object-cover group-hover:scale-[${isFeature ? '1.05' : '1.04'}] ${
                     isFeature ? 'h-full min-h-[320px] lg:min-h-[480px]' : 'h-48 sm:h-56 lg:h-64'
                   }`}
+                  style={{ transition: `transform ${650 + i * 30}ms cubic-bezier(0.22,1,0.36,1)` }}
                   loading="lazy"
                   decoding="async"
                 />
@@ -63,15 +64,15 @@ const Gallery = memo(function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
 
                 {/* Hover enhanced overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-start justify-end p-5 sm:p-6">
-                  <span className="text-cream font-heading font-bold text-sm sm:text-base translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent opacity-0 group-hover:opacity-100 flex flex-col items-start justify-end p-5 sm:p-6" style={{ transition: 'opacity 0.45s ease' }}>
+                  <span className="text-cream font-heading font-bold text-sm sm:text-base translate-y-2 group-hover:translate-y-0" style={{ transition: 'transform 0.4s cubic-bezier(0.22,1,0.36,1)' }}>
                     {img.alt}
                   </span>
-                  <span className="text-flame text-xs font-medium mt-1 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-75">Two Brothers Shawarma</span>
+                  <span className="text-flame/80 text-xs font-medium mt-1 translate-y-2 group-hover:translate-y-0" style={{ transition: 'transform 0.45s cubic-bezier(0.22,1,0.36,1) 0.05s' }}>Two Brothers Shawarma</span>
                 </div>
 
                 {/* Warm accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-paprika via-flame to-flame-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-paprika via-flame to-flame-light scale-x-0 group-hover:scale-x-100 origin-left" style={{ transition: 'transform 0.5s cubic-bezier(0.22,1,0.36,1)' }} />
               </motion.div>
             )
           })}

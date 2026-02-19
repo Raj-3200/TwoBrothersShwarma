@@ -26,12 +26,12 @@ const SectionHeading = memo(function SectionHeading({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className={`max-w-3xl ${center ? 'mx-auto text-center' : ''} mb-12 lg:mb-16`}
+      className={`max-w-3xl ${center ? 'mx-auto text-center' : ''} mb-14 lg:mb-20`}
     >
       {badge && (
         <motion.span
           variants={fadeInUp}
-          className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-5 ${
+          className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase mb-6 ${
             light
               ? 'bg-flame/15 text-flame-light border border-flame/20'
               : 'bg-flame/10 text-flame border border-flame/15'
@@ -43,7 +43,7 @@ const SectionHeading = memo(function SectionHeading({
       )}
       <motion.h2
         variants={fadeInUp}
-        className={`text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold leading-tight ${
+        className={`text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-5xl font-heading font-extrabold leading-[1.1] tracking-[-0.02em] ${
           light ? 'text-cream' : 'text-charcoal'
         }`}
       >
@@ -54,18 +54,18 @@ const SectionHeading = memo(function SectionHeading({
       {/* Decorative divider */}
       <motion.div
         variants={fadeInUp}
-        className={`flex items-center ${center ? 'justify-center' : ''} gap-3 mt-4`}
+        className={`flex items-center ${center ? 'justify-center' : ''} gap-3 mt-5`}
       >
-        <span className={`h-px w-10 bg-gradient-to-r from-transparent ${light ? 'to-flame/30' : 'to-flame/25'}`} />
-        <span className="w-1.5 h-1.5 rounded-full bg-flame/40" />
-        <span className={`h-px w-10 bg-gradient-to-l from-transparent ${light ? 'to-flame/30' : 'to-flame/25'}`} />
+        <span className={`h-px w-8 bg-gradient-to-r from-transparent ${light ? 'to-flame/25' : 'to-flame/20'}`} />
+        <span className="w-1 h-1 rounded-full bg-flame/35" />
+        <span className={`h-px w-8 bg-gradient-to-l from-transparent ${light ? 'to-flame/25' : 'to-flame/20'}`} />
       </motion.div>
 
       {subtitle && (
         <motion.p
           variants={fadeInUp}
-          className={`mt-4 text-base lg:text-lg leading-relaxed ${
-            light ? 'text-cream/55' : 'text-charcoal/55'
+          className={`mt-5 text-[15px] lg:text-base leading-relaxed max-w-xl ${center ? 'mx-auto' : ''} ${
+            light ? 'text-cream/50' : 'text-charcoal/50'
           }`}
         >
           {subtitle}
