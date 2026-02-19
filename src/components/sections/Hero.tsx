@@ -51,7 +51,7 @@ const Hero = memo(function Hero() {
   }, [nextImage, prefersReducedMotion])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grain-overlay">
       {/* ── Background Image Carousel — simple crossfade, no Ken Burns ── */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -97,46 +97,51 @@ const Hero = memo(function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* Top row: Est. badge + Rating badge */}
-        <motion.div variants={fadeInUp} className="mb-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-          {/* Founded badge */}
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase border border-white/10 bg-white/5 text-white/60">
-            <span className="w-1.5 h-1.5 rounded-full bg-flame/60" />
-            Est. 2018 • Nagpur
-          </span>
-
-          {/* Rating badge */}
-          <span className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold border border-flame/25 bg-flame/10 text-yellow-400">
-            <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <span className="font-black text-base">4.1</span>
-            </span>
-            <span className="w-px h-4 bg-yellow-400/25" />
-            <span className="text-yellow-300/80">Rated on Google • Zomato • Swiggy</span>
-          </span>
+        {/* Official Logo — large, centered, glowing */}
+        <motion.div variants={fadeInUp} className="mb-6 flex justify-center">
+          <div className="relative">
+            <img
+              src="/logo.png"
+              alt="Two Brothers Shawarma"
+              className="h-28 sm:h-36 lg:h-44 w-auto object-contain drop-shadow-2xl"
+              width={280}
+              height={176}
+              loading="eager"
+              decoding="async"
+            />
+            {/* Warm glow behind logo */}
+            <div className="absolute inset-0 -z-10 blur-3xl opacity-20 bg-flame rounded-full scale-150" />
+          </div>
         </motion.div>
 
-        {/* Headline */}
+        {/* Brand name — split into two creative lines */}
         <motion.h1
           variants={fadeInUp}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black text-cream leading-[1.05] tracking-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-black leading-[0.92] tracking-[-0.03em]"
         >
-          <span className="block text-cream/60 text-lg sm:text-xl md:text-2xl font-semibold tracking-[0.2em] uppercase mb-3 font-sans">
-            Nagpur's Favorite
-          </span>
-          <span className="text-gradient-warm inline-block">Shawarma</span>{' '}
-          <span className="italic">Destination</span>
+          <span className="block text-cream">Two Brother's</span>
+          <span className="block text-gradient-warm mt-1">Shawarma</span>
         </motion.h1>
 
-        {/* Subheadline */}
+        {/* Tagline */}
         <motion.p
           variants={fadeInUp}
-          className="mt-6 text-lg sm:text-xl lg:text-2xl text-cream/65 font-light max-w-2xl mx-auto tracking-wide"
+          className="mt-5 text-sm sm:text-base lg:text-lg text-cream/45 font-medium tracking-[0.2em] uppercase"
         >
-          Freshly Grilled. Loaded with Flavor.
+          Nagpur's Favourite &middot; Est. 2018
         </motion.p>
+
+        {/* Rating badge — compact, centered */}
+        <motion.div variants={fadeInUp} className="mt-6 flex justify-center">
+          <span className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold border border-flame/25 bg-flame/10 text-yellow-400">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <span className="font-black text-base">4.1</span>
+            <span className="w-px h-4 bg-yellow-400/25" />
+            <span className="text-yellow-300/80 text-xs">Google &bull; Zomato &bull; Swiggy</span>
+          </span>
+        </motion.div>
 
         {/* Stats strip */}
         <motion.div
@@ -167,10 +172,11 @@ const Hero = memo(function Hero() {
             href="https://www.zomato.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white min-w-[200px] justify-center transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
+            className="flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
             style={{
               background: 'linear-gradient(135deg, #E23744 0%, #C62D3A 100%)',
               boxShadow: '0 4px 25px rgba(226,55,68,0.35)',
+              transition: 'transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease',
             }}
           >
             <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg></span>
@@ -180,10 +186,11 @@ const Hero = memo(function Hero() {
             href="https://www.swiggy.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white min-w-[200px] justify-center transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97]"
+            className="flex items-center gap-3 px-8 py-4 rounded-2xl font-heading font-bold text-base text-white min-w-[200px] justify-center hover:scale-[1.03] active:scale-[0.97]"
             style={{
               background: 'linear-gradient(135deg, #FC8019 0%, #E06D10 100%)',
               boxShadow: '0 4px 25px rgba(252,128,25,0.35)',
+              transition: 'transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease',
             }}
           >
             <span className="text-xl"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg></span>
@@ -191,7 +198,8 @@ const Hero = memo(function Hero() {
           </a>
           <a
             href="#menu"
-            className="flex items-center gap-2 px-8 py-4 rounded-2xl font-heading font-bold text-base text-cream/80 hover:text-cream border border-cream/15 hover:border-cream/30 bg-white/5 hover:bg-white/10 min-w-[200px] justify-center transition-all duration-200 hover:scale-[1.03] active:scale-[0.97]"
+            className="flex items-center gap-2 px-8 py-4 rounded-2xl font-heading font-bold text-base text-cream/80 hover:text-cream border border-cream/15 hover:border-cream/30 bg-white/5 hover:bg-white/10 min-w-[200px] justify-center hover:scale-[1.02] active:scale-[0.97]"
+            style={{ transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.35s ease, border-color 0.35s ease, color 0.3s ease' }}
           >
             View Menu
             <svg className="w-4 h-4 transition-transform group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -239,8 +247,8 @@ const Hero = memo(function Hero() {
       </motion.div>
 
       {/* ── Scroll indicator — CSS animation only ── */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-fade-up">
-        <span className="text-cream/20 text-[10px] tracking-[0.25em] uppercase font-medium">Scroll</span>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-fade-up opacity-60">
+        <span className="text-cream/15 text-[10px] tracking-[0.3em] uppercase font-medium">Scroll</span>
         <div className="animate-[scrollBounce_2s_ease-in-out_infinite]">
           <div className="w-5 h-9 rounded-full border border-cream/15 flex items-start justify-center pt-2">
             <div className="w-1 h-2 rounded-full bg-flame/60 animate-[scrollDot_2s_ease-in-out_infinite]" />
