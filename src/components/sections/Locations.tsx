@@ -18,7 +18,7 @@ const Locations = memo(function Locations() {
           badge="Find Us"
           title="Our"
           highlight="Locations"
-          subtitle="4 outlets across Nagpur. Freshly grilled shawarma, always close by."
+          subtitle="8 outlets across Nagpur & Wardha. Freshly grilled shawarma, always close by."
           light
         />
 
