@@ -115,7 +115,7 @@ const FeaturedReviews = memo(function FeaturedReviews() {
   }, [featured.length])
 
   useEffect(() => {
-    const timer = setInterval(next, 5000)
+    const timer = setInterval(next, 7000)
     return () => clearInterval(timer)
   }, [next])
 

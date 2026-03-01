@@ -57,7 +57,7 @@ const FoodShowcase = memo(function FoodShowcase() {
   }, [])
 
   useEffect(() => {
-    const t = setInterval(nextSlide, 5000)
+    const t = setInterval(nextSlide, 6000)
     return () => clearInterval(t)
   }, [nextSlide])
 

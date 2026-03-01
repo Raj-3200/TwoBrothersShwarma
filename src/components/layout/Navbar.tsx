@@ -37,7 +37,7 @@ const Navbar = memo(function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled
-        ? 'bg-charcoal/95 backdrop-blur-xl shadow-lg shadow-charcoal/20'
+        ? 'bg-charcoal/95 backdrop-blur-md shadow-lg shadow-charcoal/20'
         : 'bg-transparent'
     }`}>
       <nav className="container-max section-padding flex items-center justify-between h-16 lg:h-20">

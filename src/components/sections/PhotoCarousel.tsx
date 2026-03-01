@@ -73,7 +73,7 @@ const PhotoCarousel = memo(function PhotoCarousel() {
   /* Auto-play */
   useEffect(() => {
     if (isPaused) return
-    intervalRef.current = setInterval(() => paginate(1), 4000)
+    intervalRef.current = setInterval(() => paginate(1), 5500)
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }

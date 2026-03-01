@@ -65,11 +65,12 @@ const Hero = memo(function Hero() {
           <img
             src={HERO_IMAGES[currentImage].src}
             alt={HERO_IMAGES[currentImage].alt}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover will-change-transform"
             width={1280}
             height={854}
             loading="eager"
             decoding="async"
+            fetchPriority="high"
           />
         </motion.div>
       </AnimatePresence>

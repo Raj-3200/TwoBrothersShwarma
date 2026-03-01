@@ -8,11 +8,12 @@ const VideoShowcase = memo(function VideoShowcase() {
   const isInView = useInView(sectionRef, { margin: '-100px', once: false })
   const [isLoaded, setIsLoaded] = useState(false)
 
-  /* Play/pause based on viewport visibility */
+  /* Play/pause based on viewport visibility — lazy load video */
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
     if (isInView) {
+      if (video.preload === 'none') video.preload = 'auto'
       video.play().catch(() => {})
     } else {
       video.pause()
@@ -40,7 +41,7 @@ const VideoShowcase = memo(function VideoShowcase() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             onLoadedData={() => setIsLoaded(true)}
             className="w-full h-full object-cover"
           />

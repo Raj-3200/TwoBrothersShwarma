@@ -166,6 +166,13 @@ export const OUTLETS = [
     services: ['Dine-in', 'Delivery'],
     mapUrl: 'https://maps.app.goo.gl/YXPreJSN5sSDxk169?g_st=iw',
     embedUrl: 'https://maps.google.com/maps?q=Two+Brothers+Shawarma+Manish+Nagar+Nagpur&output=embed',
+    photosUrl: 'https://www.google.com/maps/place/Two+Brothers+Shawarma+Manish+Nagar+Nagpur/photos',
+    photos: [
+      { url: P(2474661), alt: 'Manish Nagar Outlet – Front View' },
+      { url: P(29631468), alt: 'Manish Nagar – Shawarma Counter' },
+      { url: P(5779364), alt: 'Manish Nagar – Fresh Shawarma' },
+      { url: P(18177324), alt: 'Manish Nagar – Signature Roll' },
+    ],
   },
   {
     id: 2,
@@ -178,6 +185,13 @@ export const OUTLETS = [
     services: ['Dine-in', 'Delivery'],
     mapUrl: 'https://maps.app.goo.gl/KWnAdYvcBgPgbYd56',
     embedUrl: 'https://maps.google.com/maps?q=Two+Brothers+Shawarma+IT+Park+VNIT+Nagpur&output=embed',
+    photosUrl: 'https://www.google.com/maps/place/Two+Brothers+Shawarma+IT+Park+VNIT+Nagpur/photos',
+    photos: [
+      { url: P(7703785), alt: 'IT Park Outlet – Serving Area' },
+      { url: P(29306505), alt: 'IT Park – Crispy Shawarma' },
+      { url: P(18330008), alt: 'IT Park – Open Chicken Special' },
+      { url: P(15913640), alt: 'IT Park – Garlic Shawarma' },
+    ],
   },
   {
     id: 3,
@@ -190,6 +204,13 @@ export const OUTLETS = [
     services: ['Dine-in', 'Drive-through', 'No-contact delivery'],
     mapUrl: 'https://maps.app.goo.gl/aGGCoh8MsSosem3v8?g_st=iw',
     embedUrl: 'https://maps.google.com/maps?q=Two+Brothers+Shawarma+Nandanvan+Nagpur&output=embed',
+    photosUrl: 'https://www.google.com/maps/place/Two+Brothers+Shawarma+Nandanvan+Nagpur/photos',
+    photos: [
+      { url: P(32986489), alt: 'Nandanvan Outlet – Exterior' },
+      { url: P(5175631), alt: 'Nandanvan – Tandoori Prep' },
+      { url: P(17200358), alt: 'Nandanvan – Maharaja Special' },
+      { url: P(33430554), alt: 'Nandanvan – Tikka Roll' },
+    ],
   },
   {
     id: 4,
@@ -202,6 +223,13 @@ export const OUTLETS = [
     services: ['Dine-in', 'Takeaway', 'Delivery'],
     mapUrl: 'https://maps.app.goo.gl/Yh5oYB57ykNeGfw78?g_st=iw',
     embedUrl: 'https://maps.google.com/maps?q=Two+Brothers+Shawarma+Jafar+Nagar+Nagpur&output=embed',
+    photosUrl: 'https://www.google.com/maps/place/Two+Brothers+Shawarma+Jafar+Nagar+Nagpur/photos',
+    photos: [
+      { url: P(29850814), alt: 'Jafar Nagar Outlet – Counter' },
+      { url: P(29285458), alt: 'Jafar Nagar – Double Cheese' },
+      { url: P(14979832), alt: 'Jafar Nagar – Hot & Spicy' },
+      { url: P(9624298), alt: 'Jafar Nagar – Oregano Shawarma' },
+    ],
   },
   {
     id: 5,
@@ -214,6 +242,13 @@ export const OUTLETS = [
     services: ['Dine-in', 'Delivery'],
     mapUrl: 'https://maps.app.goo.gl/aRXHHmoyNKCWXy9cA?g_st=iw',
     embedUrl: 'https://maps.google.com/maps?q=Two+Brothers+Shawarma+Tiranga+Square+Nagpur&output=embed',
+    photosUrl: 'https://www.google.com/maps/place/Two+Brothers+Shawarma+Tiranga+Square+Nagpur/photos',
+    photos: [
+      { url: P(32986483), alt: 'Tiranga Square – Outlet View' },
+      { url: P(29173105), alt: 'Tiranga Square – Paneer Special' },
+      { url: P(28674560), alt: 'Tiranga Square – Butter Delight' },
+      { url: P(12737919), alt: 'Tiranga Square – Paneer Tikka' },
+    ],
   },
   {
     id: 6,
@@ -226,6 +261,13 @@ export const OUTLETS = [
     services: ['Dine-in', 'Delivery'],
     mapUrl: 'https://maps.app.goo.gl/bY6osVKz95D4tseu8?g_st=iw',
     embedUrl: 'https://maps.google.com/maps?q=Two+Brothers+Shawarma+Ayodhya+Nagar+Nagpur&output=embed',
+    photosUrl: 'https://www.google.com/maps/place/Two+Brothers+Shawarma+Ayodhya+Nagar+Nagpur/photos',
+    photos: [
+      { url: P(27054745), alt: 'Ayodhya Nagar – Outlet Front' },
+      { url: P(20395267), alt: 'Ayodhya Nagar – Tandoori Paneer' },
+      { url: P(33430558), alt: 'Ayodhya Nagar – Cheese Paneer' },
+      { url: P(29631461), alt: 'Ayodhya Nagar – Hot Spicy Paneer' },
+    ],
   },
   {
     id: 7,
@@ -238,6 +280,13 @@ export const OUTLETS = [
     services: ['Dine-in', 'Delivery'],
     mapUrl: 'https://www.google.com/maps?q=21.124849319458008,79.06349182128906&z=17&hl=en',
     embedUrl: 'https://maps.google.com/maps?q=21.124849319458008,79.06349182128906&z=17&output=embed',
+    photosUrl: 'https://www.google.com/maps/place/Two+Brothers+Shawarma+Laxmi+Nagar+Nagpur/photos',
+    photos: [
+      { url: P(18177341), alt: 'Laxmi Nagar – Outlet View' },
+      { url: P(7564714), alt: 'Laxmi Nagar – Rumali Special' },
+      { url: P(8018000), alt: 'Laxmi Nagar – Tandoori Wrap' },
+      { url: P(23025180), alt: 'Laxmi Nagar – Paneer Rumali' },
+    ],
   },
   {
     id: 8,
@@ -250,6 +299,13 @@ export const OUTLETS = [
     services: ['Dine-in', 'Delivery'],
     mapUrl: 'https://maps.app.goo.gl/YFcUmZwBATszpCDQ6?g_st=aw',
     embedUrl: 'https://maps.google.com/maps?q=Two+Brothers+Shawarma+Wardha+Maharashtra&output=embed',
+    photosUrl: 'https://www.google.com/maps/place/Two+Brothers+Shawarma+Wardha+Maharashtra/photos',
+    photos: [
+      { url: P(33215435), alt: 'Wardha Outlet – Front' },
+      { url: P(17200361), alt: 'Wardha – Spicy Paneer' },
+      { url: P(461198), alt: 'Wardha – Tandoori Paneer Rumali' },
+      { url: P(28445587), alt: 'Wardha – Chicken Momos' },
+    ],
   },
 ]
 

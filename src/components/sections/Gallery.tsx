@@ -44,17 +44,18 @@ const Gallery = memo(function Gallery() {
               <motion.div
                 key={img.id}
                 variants={fadeInUp}
-                className={`group relative rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all duration-500 cursor-pointer ${
+                className={`group relative rounded-2xl overflow-hidden shadow-card hover:shadow-elevated cursor-pointer ${
                   isFeature ? 'row-span-2' : ''
                 }`}
+                style={{ transition: 'box-shadow 0.4s ease' }}
               >
                 <img
                   src={img.url}
                   alt={img.alt}
-                  className={`w-full object-cover group-hover:scale-[${isFeature ? '1.05' : '1.04'}] ${
+                  className={`w-full object-cover group-hover:scale-105 ${
                     isFeature ? 'h-full min-h-[320px] lg:min-h-[480px]' : 'h-48 sm:h-56 lg:h-64'
                   }`}
-                  style={{ transition: `transform ${650 + i * 30}ms cubic-bezier(0.22,1,0.36,1)` }}
+                  style={{ transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1)' }}
                   loading="lazy"
                   decoding="async"
                 />
