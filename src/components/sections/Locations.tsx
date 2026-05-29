@@ -1,19 +1,11 @@
-import { memo, useState, useCallback } from 'react'
+import { memo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionHeading from '@/components/ui/SectionHeading'
-import LocationPhotosModal from '@/components/ui/LocationPhotosModal'
 import { OUTLETS } from '@/utils/constants'
 import { fadeInUp, staggerContainer } from '@/utils/animations'
 
 const Locations = memo(function Locations() {
   const [activeOutlet, setActiveOutlet] = useState(0)
-  const [photosModalOpen, setPhotosModalOpen] = useState(false)
-  const [photosOutletIndex, setPhotosOutletIndex] = useState(0)
-
-  const openPhotos = useCallback((index: number) => {
-    setPhotosOutletIndex(index)
-    setPhotosModalOpen(true)
-  }, [])
 
   return (
     <section id="locations" className="py-20 lg:py-28 bg-dark-section relative overflow-hidden grain-overlay">
@@ -130,7 +122,7 @@ const Locations = memo(function Locations() {
                 </div>
 
                 {/* Action row */}
-                <div className="grid grid-cols-3 gap-3 mt-6">
+                <div className="grid grid-cols-2 gap-3 mt-6">
                   <a
                     href={OUTLETS[activeOutlet].mapUrl}
                     target="_blank"
@@ -140,13 +132,6 @@ const Locations = memo(function Locations() {
                   >
                     Directions
                   </a>
-                  <button
-                    onClick={() => openPhotos(activeOutlet)}
-                    className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-heading font-bold text-sm text-cream border border-cream/15 hover:border-flame/40 hover:bg-cream/5 transition-all duration-300 hover:scale-105 active:scale-95"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" /></svg>
-                    Photos
-                  </button>
                   <a
                     href={`tel:+91${OUTLETS[activeOutlet].phone}`}
                     className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-heading font-bold text-sm text-cream border border-cream/15 hover:border-flame/40 hover:bg-cream/5 transition-all duration-300 hover:scale-105 active:scale-95"
@@ -190,36 +175,16 @@ const Locations = memo(function Locations() {
                 {outlet.name.split('–')[1]?.trim() || outlet.name}
               </h4>
               <p className="text-xs text-cream/35 mt-1 line-clamp-2">{outlet.address.split(',').slice(0, 2).join(', ')}</p>
-              <div className="flex items-center justify-between mt-3">
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] text-cream/30 font-medium">{outlet.hours}</span>
-                  <span className="text-[10px] text-cream/20">•</span>
-                  <span className="text-[10px] text-cream/30 font-medium">{outlet.phone}</span>
-                </div>
-                <span
-                  role="button"
-                  tabIndex={0}
-                  onClick={(e) => { e.stopPropagation(); openPhotos(i) }}
-                  onKeyDown={(e) => { if (e.key === 'Enter') { e.stopPropagation(); openPhotos(i) } }}
-                  className="flex items-center gap-1 text-[10px] text-flame/70 hover:text-flame font-bold transition-colors cursor-pointer"
-                >
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" /></svg>
-                  Photos
-                </span>
+              <div className="flex items-center gap-2 mt-3">
+                <span className="text-[10px] text-cream/30 font-medium">{outlet.hours}</span>
+                <span className="text-[10px] text-cream/20">•</span>
+                <span className="text-[10px] text-cream/30 font-medium">{outlet.phone}</span>
               </div>
             </motion.button>
           ))}
         </motion.div>
       </div>
 
-      {/* Location Photos Modal */}
-      <LocationPhotosModal
-        isOpen={photosModalOpen}
-        onClose={() => setPhotosModalOpen(false)}
-        photos={OUTLETS[photosOutletIndex].photos}
-        outletName={OUTLETS[photosOutletIndex].name}
-        photosUrl={OUTLETS[photosOutletIndex].photosUrl}
-      />
     </section>
   )
 })

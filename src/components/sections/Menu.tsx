@@ -111,7 +111,7 @@ const Menu = memo(function Menu() {
           badge="Our Menu"
           title="Best Sellers &"
           highlight="Fan Favourites"
-          subtitle="Here's what people keep coming back for. Freshly made, loaded with flavour. \u20B989 – \u20B9289."
+          subtitle="Here's what people keep coming back for. Freshly made, loaded with flavour."
           light
         />
 
